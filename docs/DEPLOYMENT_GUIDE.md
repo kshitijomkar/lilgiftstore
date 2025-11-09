@@ -107,7 +107,7 @@ Step-by-step guide to deploy The Lil Gift Corner to production.
 MONGO_URL=mongodb+srv://lilgift_admin:yourpassword@lilgiftcorner-prod.xxxxx.mongodb.net/
 DB_NAME=lilgiftcorner
 JWT_SECRET=your-super-secret-production-jwt-key-min-32-chars
-STRIPE_API_KEY=sk_live_your_production_stripe_key
+STRIPE_API_KEY=
 CORS_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
 REACT_APP_BACKEND_URL=https://lilgiftcorner-api.onrender.com
 ```

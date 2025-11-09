@@ -41,7 +41,7 @@ The Lil Gift Corner eCommerce platform has been comprehensively tested across ba
 ✅ MONGO_URL=mongodb://localhost:27017
 ✅ DB_NAME=lilgiftcorner_db
 ✅ JWT_SECRET=Configured
-✅ STRIPE_API_KEY=sk_test_emergent
+✅ STRIPE_API_KEY=
 ✅ CORS_ORIGINS=*
 ```
 

@@ -69,7 +69,7 @@ JWT_SECRET="your-super-secret-jwt-key-change-in-production"
 CORS_ORIGINS="*"
 
 # Stripe Payment (test key for development)
-STRIPE_API_KEY="sk_test_emergent"
+STRIPE_API_KEY=
 ```
 
 **Security Note**: Always use strong, unique secrets in production!

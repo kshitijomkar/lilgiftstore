@@ -116,7 +116,7 @@ yarn --version    # Should show 1.22.x or higher
    DB_NAME="lilgiftcorner_db"
    CORS_ORIGINS="*"
    JWT_SECRET="your-secret-key-change-in-production"
-   STRIPE_API_KEY="sk_test_emergent"
+   STRIPE_API_KEY=
    ```
 
    **For production, update:**

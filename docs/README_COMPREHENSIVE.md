@@ -535,7 +535,7 @@ JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 JWT_ALGORITHM=HS256
 
 # Stripe Payment
-STRIPE_API_KEY=sk_test_your_stripe_test_key
+STRIPE_API_KEY=
 
 # CORS
 CORS_ORIGINS=http://localhost:3000,https://yourdomain.com

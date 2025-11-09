@@ -172,7 +172,7 @@ MongoDB Atlas is a fully managed cloud database service that provides:
    DB_NAME="lilgiftcorner_db"
    CORS_ORIGINS="*"
    JWT_SECRET="your-super-secret-jwt-key-change-this"
-   STRIPE_API_KEY="sk_live_your_stripe_key"
+   STRIPE_API_KEY=
    ```
 
 2. **Important Notes**:

@@ -508,7 +508,7 @@ CORS_ORIGINS=https://lilgiftcorner-frontend.onrender.com
 JWT_SECRET=your-secure-random-string-here
 
 # Optional
-STRIPE_API_KEY=sk_test_emergent  # Use real key for production
+STRIPE_API_KEY=  # Use real key for production
 PYTHON_VERSION=3.11.0
 ```
 
