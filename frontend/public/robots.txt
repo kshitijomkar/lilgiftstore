@@ -1,0 +1,14 @@
+# robots.txt for The Lil Gift Corner
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /profile/
+
+# Sitemap location
+Sitemap: https://gift-boutique.preview.emergentagent.com/sitemap.xml
+
+# Crawl-delay for polite crawlers
+Crawl-delay: 10
