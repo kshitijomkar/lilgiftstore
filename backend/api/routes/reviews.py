@@ -103,3 +103,4 @@ async def delete_review(
     await review_repo.update_product_rating(review["product_id"])
     
     return {"message": "Review deleted"}
+

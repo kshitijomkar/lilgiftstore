@@ -14,3 +14,4 @@ async def submit_custom_gift(request: CustomGiftCreate):
     doc = serialize_document(gift_obj.model_dump())
     await db_manager.db.custom_gifts.insert_one(doc)
     return gift_obj
+

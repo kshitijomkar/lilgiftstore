@@ -28,3 +28,4 @@ class ErrorHandlerMiddleware(BaseHTTPMiddleware):
 def error_handler_middleware(app):
     """Add error handling middleware to app"""
     app.add_middleware(ErrorHandlerMiddleware)
+

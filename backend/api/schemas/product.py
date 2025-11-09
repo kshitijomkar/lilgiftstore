@@ -44,3 +44,4 @@ class Product(ProductBase):
     average_rating: float = 0.0
     total_reviews: int = 0
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+

@@ -14,3 +14,4 @@ async def submit_contact(request: ContactCreate):
     doc = serialize_document(contact_obj.model_dump())
     await db_manager.db.contacts.insert_one(doc)
     return contact_obj
+

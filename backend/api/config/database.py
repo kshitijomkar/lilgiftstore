@@ -118,3 +118,4 @@ db_manager = DatabaseManager()
 def get_database():
     """Dependency to get database instance"""
     return db_manager.db
+

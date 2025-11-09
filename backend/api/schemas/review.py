@@ -27,3 +27,4 @@ class Review(BaseModel):
     helpful_count: int = 0
     status: str = "approved"  # approved, pending, rejected
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+

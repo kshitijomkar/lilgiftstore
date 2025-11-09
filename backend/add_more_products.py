@@ -220,3 +220,4 @@ async def add_products():
 
 if __name__ == "__main__":
     asyncio.run(add_products())
+

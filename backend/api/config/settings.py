@@ -34,7 +34,7 @@ class Settings(BaseSettings):
     CORS_ORIGINS: str = os.getenv("CORS_ORIGINS", "*")
     
     # Stripe Payment
-    STRIPE_API_KEY: str = os.getenv("STRIPE_API_KEY", "sk_test_emergent")
+    STRIPE_API_KEY: str = os.getenv("STRIPE_API_KEY", "your_stripe_key")
     
     # Admin Credentials (for initial setup)
     ADMIN_EMAIL: str = "admin@thelilgiftcorner.com"
@@ -62,3 +62,4 @@ class Settings(BaseSettings):
 
 # Global settings instance
 settings = Settings()
+

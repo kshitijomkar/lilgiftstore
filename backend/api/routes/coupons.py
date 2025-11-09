@@ -81,3 +81,4 @@ async def get_active_coupons(
         "min_order_value": c["min_order_value"],
         "valid_until": c["valid_until"]
     } for c in coupons]
+

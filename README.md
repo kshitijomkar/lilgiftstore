@@ -102,7 +102,7 @@ Backend `.env`:
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=lilgiftcorner_db
 JWT_SECRET=your-secret-key
-STRIPE_API_KEY=sk_test_your_key
+STRIPE_API_KEY=your_stripe_key
 CORS_ORIGINS=http://localhost:3000
 ```
 
@@ -235,3 +235,4 @@ cd frontend && yarn test
 **Made with 💖 for The Lil Gift Corner**
 
 </div>
+

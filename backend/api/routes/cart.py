@@ -138,3 +138,4 @@ async def clear_cart(
     """Clear entire cart"""
     await cart_repo.clear_session(session_id)
     return {"message": "Cart cleared"}
+

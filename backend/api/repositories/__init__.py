@@ -18,3 +18,4 @@ __all__ = [
     "WishlistRepository",
     "CouponRepository",
 ]
+

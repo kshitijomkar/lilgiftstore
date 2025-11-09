@@ -16,3 +16,4 @@ class UserRepository(BaseRepository):
     async def get_users_by_role(self, role: str) -> list:
         """Get all users with specific role"""
         return await self.find_many({"role": role})
+

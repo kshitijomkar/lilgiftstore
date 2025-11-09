@@ -584,7 +584,7 @@ curl http://localhost:8001/api/
 | `DB_NAME` | Database name | `lil_gift_corner` | Yes |
 | `JWT_SECRET` | Secret key for JWT tokens | Random 32+ chars | Yes |
 | `JWT_ALGORITHM` | JWT signing algorithm | `HS256` | Yes |
-| `STRIPE_API_KEY` | Stripe API key | `sk_test_...` | Yes |
+| `STRIPE_API_KEY` | Stripe API key | `PLACEHOLDER_TEST_KEY` | Yes |
 | `CORS_ORIGINS` | Allowed origins (comma-separated) | `*` or specific URLs | Yes |
 | `HOST` | Server bind address | `0.0.0.0` | No |
 | `PORT` | Server port | `8001` | No |
@@ -604,7 +604,7 @@ curl http://localhost:8001/api/
    - Visit [stripe.com/docs/keys](https://stripe.com/docs/keys)
    - Create account or login
    - Navigate to Developers → API keys
-   - Copy "Secret key" (starts with `sk_test_` or `sk_live_`)
+   - Copy "Secret key" (starts with `PLACEHOLDER_TEST_KEY` or `sk_live_`)
 
 2. **Test Mode vs Live Mode:**
    ```

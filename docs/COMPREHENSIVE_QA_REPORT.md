@@ -257,7 +257,7 @@
 | Component | Status | Notes |
 |-----------|--------|-------|
 | Stripe Library | ✅ Installed | `emergentintegrations==0.1.0` |
-| API Key | ✅ Configured | Test key: `sk_test_your_test_key` |
+| API Key | ✅ Configured | Test key: `PLACEHOLDER_TEST_KEY` |
 | Checkout Endpoint | ✅ Working | `POST /api/checkout/session` |
 | Status Check | ✅ Working | `GET /api/checkout/status/{id}` |
 | Webhook Handler | ✅ Configured | `POST /api/checkout/webhook/stripe` |

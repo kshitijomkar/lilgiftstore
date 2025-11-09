@@ -37,3 +37,4 @@ class User(UserBase):
     role: str = "customer"  # customer or admin
     phone: Optional[str] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+

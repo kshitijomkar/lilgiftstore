@@ -12,3 +12,4 @@ class WishlistItem(BaseModel):
     user_id: str
     product_id: str
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+

@@ -43,3 +43,4 @@ class CouponRepository(BaseRepository):
     async def record_usage(self, usage_data: Dict):
         """Record coupon usage"""
         await self.usage_collection.insert_one(usage_data)
+

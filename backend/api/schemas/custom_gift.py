@@ -28,3 +28,4 @@ class CustomGiftRequest(BaseModel):
     budget: Optional[str] = None
     status: str = "pending"
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+

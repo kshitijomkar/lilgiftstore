@@ -46,3 +46,4 @@ def serialize_documents(docs: List[Dict]) -> List[Dict]:
 def deserialize_documents(docs: List[Dict]) -> List[Dict]:
     """Deserialize a list of documents"""
     return [deserialize_document(doc) for doc in docs]
+

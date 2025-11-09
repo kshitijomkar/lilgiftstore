@@ -62,3 +62,4 @@ class ProductService:
         products = await self.product_repo.find_many(limit=1000)
         categories = list(set([p["category"] for p in products if "category" in p]))
         return sorted(categories)
+

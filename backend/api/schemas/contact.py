@@ -21,3 +21,4 @@ class ContactRequest(BaseModel):
     message: str
     status: str = "pending"
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+

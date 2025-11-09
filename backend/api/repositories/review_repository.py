@@ -42,3 +42,4 @@ class ReviewRepository(BaseRepository):
         ]
         result = await self.aggregate(pipeline)
         return result[0] if result else {"avg_rating": 0, "total_reviews": 0}
+

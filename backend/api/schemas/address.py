@@ -32,3 +32,4 @@ class Address(BaseModel):
     postal_code: str
     is_default: bool = False
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+

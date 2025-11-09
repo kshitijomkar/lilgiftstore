@@ -23,7 +23,7 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
 # Stripe setup
-stripe_api_key = os.environ.get('STRIPE_API_KEY', 'sk_test_emergent')
+stripe_api_key = os.environ.get('STRIPE_API_KEY', 'your_stripe_key')
 
 # JWT & Password
 JWT_SECRET = os.environ.get('JWT_SECRET', 'your-secret-key-change-in-production')

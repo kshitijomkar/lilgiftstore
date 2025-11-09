@@ -36,3 +36,4 @@ class LoggingMiddleware(BaseHTTPMiddleware):
 def logging_middleware(app):
     """Add logging middleware to app"""
     app.add_middleware(LoggingMiddleware)
+

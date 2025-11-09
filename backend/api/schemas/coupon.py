@@ -53,3 +53,4 @@ class CouponUsage(BaseModel):
     order_id: str
     discount_amount: float
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+

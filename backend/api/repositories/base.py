@@ -97,3 +97,4 @@ class BaseRepository:
         """Execute aggregation pipeline"""
         cursor = self.collection.aggregate(pipeline)
         return await cursor.to_list(None)
+

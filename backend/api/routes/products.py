@@ -117,3 +117,4 @@ async def get_product(
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
     return product
+

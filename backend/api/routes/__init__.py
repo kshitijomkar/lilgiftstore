@@ -32,3 +32,4 @@ api_router.include_router(contacts_router, tags=["Contact"])
 api_router.include_router(admin_router, tags=["Admin"])
 
 __all__ = ["api_router"]
+

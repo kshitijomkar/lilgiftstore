@@ -332,7 +332,7 @@ Scroll to **"Environment Variables"** section and add:
 | `MONGO_URL` | `mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/` | From MongoDB Atlas |
 | `DB_NAME` | `lilgiftcorner_db` | |
 | `CORS_ORIGINS` | `https://lilgiftcorner-frontend.onrender.com,https://yourdomain.com` | Your frontend URLs |
-| `STRIPE_API_KEY` | `sk_test_your_test_key` | Replace with real Stripe key for production |
+| `STRIPE_API_KEY` | `PLACEHOLDER_TEST_KEY` | Replace with real Stripe key for production |
 | `JWT_SECRET` | Generate secure key | See below |
 
 **Generate JWT Secret**:

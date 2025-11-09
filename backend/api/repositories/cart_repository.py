@@ -37,3 +37,4 @@ class CartRepository(BaseRepository):
     async def clear_session(self, session_id: str) -> int:
         """Alias for clear_session_cart - used by routes"""
         return await self.clear_session_cart(session_id)
+

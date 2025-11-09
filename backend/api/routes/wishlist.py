@@ -104,3 +104,4 @@ async def check_wishlist(
         user["id"], product_id
     )
     return {"in_wishlist": bool(item)}
+

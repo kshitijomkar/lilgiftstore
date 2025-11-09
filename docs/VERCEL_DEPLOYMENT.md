@@ -1206,7 +1206,7 @@ Vercel enforces HTTPS automatically:
 vercel env add SECRET_KEY production
 
 # Never in code:
-# ❌ const key = "sk_live_your_live_key";
+# ❌ const key = "your_stripe_key";
 
 # Use environment variables:
 # ✅ const key = process.env.STRIPE_SECRET_KEY;

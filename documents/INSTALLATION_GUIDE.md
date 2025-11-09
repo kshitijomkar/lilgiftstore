@@ -163,7 +163,7 @@ Backend `.env`:
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=lilgiftcorner_db
 JWT_SECRET=your-super-secret-key-change-this-in-production
-STRIPE_API_KEY=sk_test_your_test_key
+STRIPE_API_KEY=your_stripe_key
 CORS_ORIGINS=http://localhost:3000
 HOST=0.0.0.0
 PORT=8001
@@ -475,7 +475,7 @@ JWT_ALGORITHM=HS256
 JWT_EXPIRATION_DAYS=7
 
 # Stripe Payment
-STRIPE_API_KEY=sk_test_your_test_key
+STRIPE_API_KEY=your_stripe_key
 
 # CORS
 CORS_ORIGINS=http://localhost:3000

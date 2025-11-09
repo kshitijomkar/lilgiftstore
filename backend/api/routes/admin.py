@@ -453,3 +453,4 @@ async def admin_sales_analytics(
     ]
     
     return {"sales_data": sales_data, "days": days}
+

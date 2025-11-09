@@ -33,3 +33,4 @@ class WishlistRepository(BaseRepository):
     async def delete_user_product(self, user_id: str, product_id: str) -> bool:
         """Alias for remove_item - used by routes"""
         return await self.remove_item(user_id, product_id)
+

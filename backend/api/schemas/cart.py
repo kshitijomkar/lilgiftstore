@@ -23,3 +23,4 @@ class CartItem(BaseModel):
     session_id: str
     user_id: Optional[str] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+

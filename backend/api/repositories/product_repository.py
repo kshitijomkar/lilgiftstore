@@ -85,3 +85,4 @@ class ProductRepository(BaseRepository):
         new_quantity = max(0, product.get("stock_quantity", 100) - quantity)
         await self.update(product_id, {"stock_quantity": new_quantity})
         return True
+

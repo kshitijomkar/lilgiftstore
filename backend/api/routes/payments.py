@@ -224,3 +224,4 @@ async def stripe_webhook(request: Request):
     except Exception as e:
         logger.error(f"Webhook error: {str(e)}")
         raise HTTPException(status_code=400, detail="Webhook error")
+
