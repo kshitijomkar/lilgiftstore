@@ -114,7 +114,7 @@ PORT=8001
 MONGO_URL=mongodb+srv://lilgiftcorner_admin:<password>@lil-gift-corner-prod.xxxxx.mongodb.net/?retryWrites=true&w=majority
 DB_NAME=lilgiftcorner_db
 JWT_SECRET=your-super-secure-production-secret-change-this
-STRIPE_API_KEY=sk_test_51SRFyVC01arNLN6x6FPv3qZlKgW3weyDtO0PhI4M7yg0hGCAvscPQHgAYCLzN27gT6xRTXv7NaYW6IiVVgidAM1Y00bwd0yPgy
+STRIPE_API_KEY=
 CORS_ORIGINS=https://your-app.vercel.app,http://localhost:3000
 LOG_LEVEL=INFO
 ```

@@ -316,7 +316,7 @@ MONGO_URL="mongodb://localhost:27017"
 DB_NAME="lilgiftcorner_db"
 CORS_ORIGINS="*"
 JWT_SECRET="your-secret-key-change-in-production"
-STRIPE_API_KEY="sk_test_51SRFyVC01arNLN6x6FPv3qZlKgW3weyDtO0PhI4M7yg0hGCAvscPQHgAYCLzN27gT6xRTXv7NaYW6IiVVgidAM1Y00bwd0yPgy"
+STRIPE_API_KEY=""
 ```
 
 **Frontend (.env)**:
