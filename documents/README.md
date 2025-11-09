@@ -76,7 +76,7 @@
 - **React 19.0.0** - Latest React with concurrent features
 - **React Router 7.5.1** - Modern routing with data loading
 - **TailwindCSS 3.4.17** - Utility-first CSS framework
-- **Shadcn UI** - Accessible, customizable component library (49 components)
+- **Shadcn UI** - Accessible, customizable component library (46 components)
 - **Radix UI** - Unstyled, accessible primitives
 - **Framer Motion 12.23.24** - Production-ready animation library
 - **Axios 1.8.4** - Promise-based HTTP client
@@ -91,8 +91,8 @@
 - **Pydantic 2.12.4** - Data validation and settings management
 - **PyJWT 2.10.1** - JSON Web Token implementation
 - **Passlib 4.1.3** - Password hashing library
-- **Bcrypt** - Secure password hashing algorithm
-- **emergentintegrations 0.1.0** - Simplified Stripe integration
+- **Bcrypt 4.1.3** - Secure password hashing algorithm
+- **Stripe 13.2.0** - Payment processing SDK
 - **Uvicorn 0.25.0** - Lightning-fast ASGI server
 - **Python 3.11+** - Latest Python with performance improvements
 
@@ -342,10 +342,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ### Statistics
 - **Total Files**: 140+
 - **Lines of Code**: ~16,720
-- **API Endpoints**: 40+
-- **UI Components**: 49 Shadcn components + 15 custom
-- **Pages**: 17 (12 public + 5 admin)
-- **Database Collections**: 7
+- **API Endpoints**: 60
+- **UI Components**: 46 Shadcn components + 15 custom
+- **Pages**: 21 (15 public + 6 admin)
+- **Database Collections**: 10 (7 core + 3 feature)
 - **Database Indexes**: 13
 - **Test Coverage**: 100% functional
 

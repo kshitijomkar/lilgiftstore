@@ -117,18 +117,18 @@
 **Backend** (`/app/backend/`):
 - ✅ server.py - Main application (documented in ARCHITECTURE.md)
 - ✅ api/routes/ - 12 route modules (documented in API_REFERENCE.md)
-- ✅ api/repositories/ - 8 repositories (documented in ARCHITECTURE.md)
-- ✅ api/services/ - 4 services (documented in ARCHITECTURE.md)
-- ✅ api/schemas/ - 11 Pydantic models (documented in DATABASE_SCHEMA.md)
+- ✅ api/repositories/ - 7 repository classes + base (documented in ARCHITECTURE.md)
+- ✅ api/services/ - 4 service modules (documented in ARCHITECTURE.md)
+- ✅ api/schemas/ - 11 schema modules (documented in DATABASE_SCHEMA.md)
 - ✅ api/middleware/ - Custom middleware (documented in ARCHITECTURE.md)
 
 **Frontend** (`/app/frontend/`):
-- ✅ src/pages/ - 17 pages (documented in ARCHITECTURE.md, USER_MANUAL.md)
-- ✅ src/components/ - 64 components (documented in ARCHITECTURE.md)
+- ✅ src/pages/ - 21 pages: 15 public + 6 admin (documented in ARCHITECTURE.md, USER_MANUAL.md)
+- ✅ src/components/ - 61 components: 46 Shadcn UI + 15 custom (documented in ARCHITECTURE.md)
 - ✅ React 19, TailwindCSS, Shadcn UI (documented in PROJECT_OVERVIEW.md)
 
 **Database** (MongoDB):
-- ✅ 7 collections (documented in DATABASE_SCHEMA.md)
+- ✅ 10 collections: 7 core + 3 feature collections (documented in DATABASE_SCHEMA.md)
 - ✅ 13 indexes (documented in DATABASE_SCHEMA.md)
 - ✅ Relationships (documented in DATABASE_SCHEMA.md)
 

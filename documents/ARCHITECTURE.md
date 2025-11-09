@@ -262,9 +262,9 @@ While not strict MVC, the architecture follows similar principles:
 | Motor | 3.3.1 | Async MongoDB driver | Application |
 | Pydantic | 2.12.4 | Data validation | Application |
 | PyJWT | 2.10.1 | JWT authentication | Application |
-| Bcrypt | Latest | Password hashing | Application |
+| Bcrypt | 4.1.3 | Password hashing | Application |
 | Uvicorn | 0.25.0 | ASGI server | Application |
-| emergentintegrations | 0.1.0 | Stripe integration | Application |
+| Stripe | 13.2.0 | Payment processing SDK | Application |
 
 ### Database
 
