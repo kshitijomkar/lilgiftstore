@@ -186,7 +186,7 @@ MONGO_URL=mongodb://localhost:27017
 4. Update `STRIPE_API_KEY` in `backend/.env`
 
 ```env
-STRIPE_API_KEY=sk_test_51xxxxxxxxxxxxxxxxxxxxxx
+STRIPE_API_KEY=
 ```
 
 ⚠️ **Note**: Use test mode keys for development. Real transactions won't be charged.

@@ -257,7 +257,7 @@ async def get_status_history(self, order_id: str) -> List[Dict]:
 - Checkout Flow: Functional
 - Webhook Support: Ready
 
-**Stripe Test Key**: `sk_test_51SRFyVC01arNLN6x...` (configured in .env)
+**Stripe Test Key**: `...` (configured in .env)
 
 ---
 
