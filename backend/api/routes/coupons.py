@@ -15,7 +15,7 @@ async def validate_coupon(
     coupon_repo: CouponRepository = Depends(get_coupon_repository)
 ):
     """Validate and calculate coupon discount"""
-    coupon = await coupon_repo.get_by_code(validate_data.code.upper())
+    coupon = await coupon_repo.find_by_code(validate_data.code.upper())
     
     if not coupon or not coupon.get("is_active"):
         raise HTTPException(404, "Invalid coupon code")
