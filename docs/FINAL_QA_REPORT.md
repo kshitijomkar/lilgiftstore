@@ -328,7 +328,7 @@ All API calls from frontend successfully communicate with backend:
 - ✅ Success/cancel pages implemented
 
 **Production Readiness:**
-- Switch to live Stripe key: `sk_live_...`
+- Switch to live Stripe key: `your_secret_key_`
 - Configure webhooks for payment confirmations
 - Test with real card numbers in live mode
 

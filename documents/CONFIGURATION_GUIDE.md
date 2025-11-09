@@ -92,7 +92,7 @@ JWT_EXPIRATION_DAYS=7
 # ============================================
 # Stripe API Key
 # Test mode: PLACEHOLDER_TEST_KEY
-# Live mode: sk_live_...
+# Live mode: your_secret_key_
 STRIPE_API_KEY=PLACEHOLDER_TEST_KEY
 
 # ============================================
@@ -213,7 +213,7 @@ python -c "import secrets; print(secrets.token_hex(32))"
 1. Sign up at https://stripe.com
 2. Go to Developers → API keys
 3. Use test keys for development: `PLACEHOLDER_TEST_KEY`
-4. Use live keys for production: `sk_live_...`
+4. Use live keys for production: `your_secret_key_`
 
 #### Server Variables
 
@@ -611,7 +611,7 @@ mongosh "mongodb://localhost:27017"
 ```bash
 # Verify Stripe key format
 # Test mode: PLACEHOLDER_TEST_KEY
-# Live mode: sk_live_...
+# Live mode: your_secret_key_
 
 # Check Stripe dashboard for errors
 # Ensure webhook endpoint is configured (production)
