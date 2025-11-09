@@ -604,7 +604,7 @@ curl http://localhost:8001/api/
    - Visit [stripe.com/docs/keys](https://stripe.com/docs/keys)
    - Create account or login
    - Navigate to Developers → API keys
-   - Copy "Secret key" (starts with `PLACEHOLDER_TEST_KEY` or `sk_live_`)
+   - Copy "Secret key" (starts with `PLACEHOLDER_TEST_KEY`)
 
 2. **Test Mode vs Live Mode:**
    ```
