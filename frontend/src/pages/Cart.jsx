@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { getSessionId } from "@/utils/session";
 import { formatINR } from "@/utils/currency";
+import CouponInput from "@/components/CouponInput";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -16,6 +17,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [appliedCoupon, setAppliedCoupon] = useState(null);
 
   useEffect(() => {
     fetchCart();
@@ -46,6 +48,22 @@ const Cart = () => {
 
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + (item.product.price * item.quantity), 0);
+  };
+
+  const calculateFinalTotal = () => {
+    const subtotal = calculateTotal();
+    if (appliedCoupon) {
+      return appliedCoupon.final_amount;
+    }
+    return subtotal;
+  };
+
+  const handleApplyCoupon = (couponData) => {
+    setAppliedCoupon(couponData);
+  };
+
+  const handleRemoveCoupon = () => {
+    setAppliedCoupon(null);
   };
 
   const handleCheckout = () => {
@@ -121,20 +139,34 @@ const Cart = () => {
                     <span>Subtotal</span>
                     <span data-testid="subtotal">{formatINR(calculateTotal())}</span>
                   </div>
+                  {appliedCoupon && (
+                    <div className="flex justify-between text-green-600 font-medium">
+                      <span>Discount ({appliedCoupon.coupon.code})</span>
+                      <span>-{formatINR(appliedCoupon.discount_amount)}</span>
+                    </div>
+                  )}
                   <div className="flex justify-between text-[#4b2e2b]/70">
                     <span>Shipping</span>
                     <span className="text-green-600">Free</span>
                   </div>
-                  <div className="border-t border-[#f7c7d3] pt-4">
+                  <div className="border-t border-[#f7c7d3] pt-4 mb-4">
                     <div className="flex justify-between text-xl font-bold text-[#4b2e2b]">
                       <span>Total</span>
-                      <span data-testid="total">{formatINR(calculateTotal())}</span>
+                      <span data-testid="total">{formatINR(calculateFinalTotal())}</span>
                     </div>
                   </div>
+                  
+                  {/* Coupon Input */}
+                  <CouponInput 
+                    cartTotal={calculateTotal()}
+                    onApply={handleApplyCoupon}
+                    onRemove={handleRemoveCoupon}
+                    appliedCoupon={appliedCoupon}
+                  />
                 </div>
                 <Button 
                   onClick={handleCheckout}
-                  className="w-full py-6 text-lg bg-[#b96a82] hover:bg-[#a05670] text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="w-full py-6 text-lg bg-[#b96a82] hover:bg-[#a05670] text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mt-4"
                   data-testid="proceed-to-checkout-btn"
                 >
                   Proceed to Checkout

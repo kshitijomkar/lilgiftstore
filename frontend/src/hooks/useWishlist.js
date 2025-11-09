@@ -45,8 +45,8 @@ export function useWishlist() {
 
     try {
       await axios.post(
-        `${API}/wishlist?product_id=${productId}`,
-        {},
+        `${API}/wishlist`,
+        { product_id: productId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       toast.success('Added to wishlist');
