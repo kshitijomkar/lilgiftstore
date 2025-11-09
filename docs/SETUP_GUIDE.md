@@ -56,7 +56,7 @@ DB_NAME=lilgiftcorner
 JWT_SECRET=your-super-secret-jwt-key-change-in-production
 
 # Stripe API Key (use test key for development)
-STRIPE_API_KEY=sk_test_your_stripe_test_key
+STRIPE_API_KEY=sk_test_your_stripe_test_key # Use real key for production
 
 # CORS Origins (comma-separated)
 CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
@@ -186,7 +186,7 @@ MONGO_URL=mongodb://localhost:27017
 4. Update `STRIPE_API_KEY` in `backend/.env`
 
 ```env
-STRIPE_API_KEY=
+STRIPE_API_KEY=sk_test_your_stripe_test_key # Use real key for production
 ```
 
 ⚠️ **Note**: Use test mode keys for development. Real transactions won't be charged.
