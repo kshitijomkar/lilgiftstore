@@ -284,7 +284,7 @@ yarn install
 |-------|----------|
 | "Cannot connect to MongoDB" | Start MongoDB service |
 | "Port 3000 already in use" | Kill process or use different port |
-| "Stripe API key invalid" | Use test key: sk_test_emergent |
+| "Stripe API key invalid" | Use test key: sk_test_your_test_key |
 | "Login failed" | Check backend logs, verify admin user seeded |
 
 ---
@@ -299,7 +299,7 @@ yarn install
 | DB_NAME | Database name | Yes | lilgiftcorner_db |
 | JWT_SECRET | Secret key for JWT tokens | Yes | (generate unique) |
 | CORS_ORIGINS | Allowed origins (* for dev) | Yes | * |
-| STRIPE_API_KEY | Stripe API key | Yes | sk_test_emergent |
+| STRIPE_API_KEY | Stripe API key | Yes | sk_test_your_test_key |
 
 ### Frontend (.env)
 

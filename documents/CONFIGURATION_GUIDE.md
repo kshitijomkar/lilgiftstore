@@ -93,7 +93,7 @@ JWT_EXPIRATION_DAYS=7
 # Stripe API Key
 # Test mode: sk_test_...
 # Live mode: sk_live_...
-STRIPE_API_KEY=sk_test_your_stripe_key
+STRIPE_API_KEY=sk_test_your_test_key
 
 # ============================================
 # CORS CONFIGURATION
@@ -207,7 +207,7 @@ python -c "import secrets; print(secrets.token_hex(32))"
 
 | Variable | Type | Default | Required | Description |
 |----------|------|---------|----------|-------------|
-| `STRIPE_API_KEY` | string | `sk_test_emergent` | Yes | Stripe secret API key |
+| `STRIPE_API_KEY` | string | `sk_test_your_test_key` | Yes | Stripe secret API key |
 
 **Getting Stripe Keys**:
 1. Sign up at https://stripe.com
@@ -358,12 +358,12 @@ Sign up at https://stripe.com
 
 **Test Mode** (for development):
 ```env
-STRIPE_API_KEY=sk_test_51XxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXx
+STRIPE_API_KEY=sk_test_your_test_key
 ```
 
 **Live Mode** (for production):
 ```env
-STRIPE_API_KEY=sk_live_51XxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXx
+STRIPE_API_KEY=sk_live_your_live_key
 ```
 
 #### 3. Configure Webhooks (Production)

@@ -316,7 +316,7 @@ All API calls from frontend successfully communicate with backend:
 ## 7. Payment Integration (Stripe)
 
 ### Configuration ✅
-- **API Key:** sk_test_emergent (Emergent test key)
+- **API Key:** sk_test_your_test_key (Emergent test key)
 - **Mode:** Test mode
 - **Integration:** emergentintegrations library
 - **Checkout Flow:** Create session → Redirect to Stripe → Handle success/cancel
@@ -447,7 +447,7 @@ Sitemap: https://gift-boutique.preview.emergentagent.com/sitemap.xml
    - ⚠️ **MUST CHANGE** to specific domains in production
 
 4. **Stripe Key**
-   - Current: `sk_test_emergent`
+   - Current: `sk_test_your_test_key`
    - ⚠️ **MUST CHANGE** to live key in production
 
 ---
