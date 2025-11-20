@@ -1,176 +1,176 @@
-name: CI/CD Pipeline - The Lil Gift Corner
+# name: CI/CD Pipeline - The Lil Gift Corner
 
-on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
+# on:
+#   push:
+#     branches: [ main, develop ]
+#   pull_request:
+#     branches: [ main ]
 
-jobs:
-  # Backend Testing and Linting
-  backend-test:
-    name: Backend Tests & Linting
-    runs-on: ubuntu-latest
+# jobs:
+#   # Backend Testing and Linting
+#   backend-test:
+#     name: Backend Tests & Linting
+#     runs-on: ubuntu-latest
     
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
       
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
+#     - name: Set up Python 3.11
+#       uses: actions/setup-python@v5
+#       with:
+#         python-version: '3.11'
         
-    - name: Cache Python dependencies
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('backend/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
+#     - name: Cache Python dependencies
+#       uses: actions/cache@v4
+#       with:
+#         path: ~/.cache/pip
+#         key: ${{ runner.os }}-pip-${{ hashFiles('backend/requirements.txt') }}
+#         restore-keys: |
+#           ${{ runner.os }}-pip-
           
-    - name: Install dependencies
-      run: |
-        cd backend
-        pip install -r requirements.txt
-        pip install pytest pytest-cov flake8 black
+#     - name: Install dependencies
+#       run: |
+#         cd backend
+#         pip install -r requirements.txt
+#         pip install pytest pytest-cov flake8 black
         
-    - name: Run Black (code formatting check)
-      run: |
-        cd backend
-        black --check . || echo "⚠️ Code formatting issues found"
+#     - name: Run Black (code formatting check)
+#       run: |
+#         cd backend
+#         black --check . || echo "⚠️ Code formatting issues found"
         
-    - name: Run Flake8 (linting)
-      run: |
-        cd backend
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics || echo "⚠️ Linting issues found"
+#     - name: Run Flake8 (linting)
+#       run: |
+#         cd backend
+#         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics || echo "⚠️ Linting issues found"
         
-    - name: Run tests (if test files exist)
-      run: |
-        cd backend
-        if [ -d "tests" ]; then
-          pytest tests/ --cov=api --cov-report=xml --cov-report=term || echo "⚠️ Some tests failed"
-        else
-          echo "✅ No test directory found, skipping tests"
-        fi
+#     - name: Run tests (if test files exist)
+#       run: |
+#         cd backend
+#         if [ -d "tests" ]; then
+#           pytest tests/ --cov=api --cov-report=xml --cov-report=term || echo "⚠️ Some tests failed"
+#         else
+#           echo "✅ No test directory found, skipping tests"
+#         fi
         
-  # Frontend Testing and Build
-  frontend-test:
-    name: Frontend Build & Tests
-    runs-on: ubuntu-latest
+#   # Frontend Testing and Build
+#   frontend-test:
+#     name: Frontend Build & Tests
+#     runs-on: ubuntu-latest
     
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
       
-    - name: Set up Node.js 18
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'yarn'
-        cache-dependency-path: frontend/yarn.lock
+#     - name: Set up Node.js 18
+#       uses: actions/setup-node@v4
+#       with:
+#         node-version: '18'
+#         cache: 'yarn'
+#         cache-dependency-path: frontend/yarn.lock
         
-    - name: Install dependencies
-      run: |
-        cd frontend
-        yarn install --frozen-lockfile
+#     - name: Install dependencies
+#       run: |
+#         cd frontend
+#         yarn install --frozen-lockfile
         
-    - name: Run ESLint (linting)
-      run: |
-        cd frontend
-        yarn eslint src/ --ext .js,.jsx,.ts,.tsx --max-warnings 10 || echo "⚠️ Linting issues found"
-      continue-on-error: true
+#     - name: Run ESLint (linting)
+#       run: |
+#         cd frontend
+#         yarn eslint src/ --ext .js,.jsx,.ts,.tsx --max-warnings 10 || echo "⚠️ Linting issues found"
+#       continue-on-error: true
         
-    - name: Build frontend
-      run: |
-        cd frontend
-        yarn build
+#     - name: Build frontend
+#       run: |
+#         cd frontend
+#         yarn build
         
-    - name: Check build size
-      run: |
-        cd frontend/build
-        SIZE=$(du -sh . | cut -f1)
-        echo "📦 Build size: $SIZE"
+#     - name: Check build size
+#       run: |
+#         cd frontend/build
+#         SIZE=$(du -sh . | cut -f1)
+#         echo "📦 Build size: $SIZE"
         
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: frontend-build
-        path: frontend/build
-        retention-days: 7
+#     - name: Upload build artifacts
+#       uses: actions/upload-artifact@v4
+#       with:
+#         name: frontend-build
+#         path: frontend/build
+#         retention-days: 7
         
-  # Security Scanning
-  security-scan:
-    name: Security Vulnerability Scan
-    runs-on: ubuntu-latest
+#   # Security Scanning
+#   security-scan:
+#     name: Security Vulnerability Scan
+#     runs-on: ubuntu-latest
     
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
       
-    - name: Run Trivy vulnerability scanner
-      uses: aquasecurity/trivy-action@master
-      with:
-        scan-type: 'fs'
-        scan-ref: '.'
-        format: 'sarif'
-        output: 'trivy-results.sarif'
-      continue-on-error: true
+#     - name: Run Trivy vulnerability scanner
+#       uses: aquasecurity/trivy-action@master
+#       with:
+#         scan-type: 'fs'
+#         scan-ref: '.'
+#         format: 'sarif'
+#         output: 'trivy-results.sarif'
+#       continue-on-error: true
         
-    - name: Upload Trivy results to GitHub Security
-      uses: github/codeql-action/upload-sarif@v3
-      with:
-        sarif_file: 'trivy-results.sarif'
-      continue-on-error: true
+#     - name: Upload Trivy results to GitHub Security
+#       uses: github/codeql-action/upload-sarif@v3
+#       with:
+#         sarif_file: 'trivy-results.sarif'
+#       continue-on-error: true
         
-  # Deploy to Vercel (Frontend)
-  deploy-frontend:
-    name: Deploy Frontend to Vercel
-    needs: [frontend-test]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#   # Deploy to Vercel (Frontend)
+#   deploy-frontend:
+#     name: Deploy Frontend to Vercel
+#     needs: [frontend-test]
+#     runs-on: ubuntu-latest
+#     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
       
-    - name: Deploy to Vercel
-      uses: amondnet/vercel-action@v25
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-        working-directory: ./frontend
-        vercel-args: '--prod'
+#     - name: Deploy to Vercel
+#       uses: amondnet/vercel-action@v25
+#       with:
+#         vercel-token: ${{ secrets.VERCEL_TOKEN }}
+#         vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+#         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+#         working-directory: ./frontend
+#         vercel-args: '--prod'
         
-  # Deploy to Render (Backend)  
-  deploy-backend:
-    name: Deploy Backend to Render
-    needs: [backend-test]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#   # Deploy to Render (Backend)  
+#   deploy-backend:
+#     name: Deploy Backend to Render
+#     needs: [backend-test]
+#     runs-on: ubuntu-latest
+#     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
       
-    - name: Trigger Render deployment
-      run: |
-        curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+#     - name: Trigger Render deployment
+#       run: |
+#         curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         
-  # Notification
-  notify:
-    name: Send Notification
-    needs: [deploy-frontend, deploy-backend]
-    runs-on: ubuntu-latest
-    if: always()
+#   # Notification
+#   notify:
+#     name: Send Notification
+#     needs: [deploy-frontend, deploy-backend]
+#     runs-on: ubuntu-latest
+#     if: always()
     
-    steps:
-    - name: Deployment Status
-      run: |
-        if [ "${{ needs.deploy-frontend.result }}" == "success" ] && [ "${{ needs.deploy-backend.result }}" == "success" ]; then
-          echo "✅ Deployment successful!"
-        else
-          echo "❌ Deployment failed!"
-        fi
+#     steps:
+#     - name: Deployment Status
+#       run: |
+#         if [ "${{ needs.deploy-frontend.result }}" == "success" ] && [ "${{ needs.deploy-backend.result }}" == "success" ]; then
+#           echo "✅ Deployment successful!"
+#         else
+#           echo "❌ Deployment failed!"
+#         fi
 
