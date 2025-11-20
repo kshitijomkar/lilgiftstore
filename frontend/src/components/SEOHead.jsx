@@ -5,7 +5,7 @@ const SEOHead = ({
   description = "Your happy place for all things cute! Discover beautiful, handcrafted gifts, wedding favors, personalized hampers, and adorable gift wrapping in India.",
   keywords = "handcrafted gifts, wedding favors, gift hampers, personalized gifts, gift wrapping, cute gifts, boutique gifts, India",
   image = "/logo.png",
-  url = "https://lil-gift-corner.preview.emergentagent.com",
+  url = "https://lilgiftstore.vercel.app",
   type = "website"
 }) => {
   return (

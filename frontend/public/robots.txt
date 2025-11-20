@@ -8,7 +8,8 @@ Disallow: /cart/
 Disallow: /profile/
 
 # Sitemap location
-Sitemap: https://gift-boutique.preview.emergentagent.com/sitemap.xml
+Sitemap: https://lilgiftstore.vercel.app/sitemap.xml
+
 
 # Crawl-delay for polite crawlers
 Crawl-delay: 10
