@@ -166,7 +166,7 @@ const AdminOrders = () => {
                   <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
                     <div>
                       <p className="text-sm text-[#4b2e2b]/70">Order ID</p>
-                      <p className="font-mono text-sm">{order.id.slice(0, 8)}...</p>
+                      <p className="font-mono text-sm">{order.id ? order.id.slice(0, 8) : "UNKNOWN"}...</p>
                     </div>
                     
                     <div>

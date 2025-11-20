@@ -325,7 +325,7 @@ const ProfileEnhanced = () => {
                       <div key={order.id} className="p-4 bg-[#fce6ec]/30 rounded-lg border border-[#f7c7d3]" data-testid={`order-${order.id}`}>
                         <div className="flex justify-between items-start mb-2">
                           <div>
-                            <p className="font-semibold text-[#4b2e2b]">Order #{order.id.slice(0, 8)}</p>
+                            <p className="font-semibold text-[#4b2e2b]">Order #{order.id ? order.id.slice(0, 8) : "UNKNOWN"}</p>
                             <p className="text-sm text-[#4b2e2b]/70 flex items-center gap-1">
                               <Calendar className="w-4 h-4" />
                               {new Date(order.created_at).toLocaleDateString()}
