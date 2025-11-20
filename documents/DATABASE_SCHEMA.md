@@ -14,7 +14,7 @@ The Lil Gift Corner uses **MongoDB**, a NoSQL document-oriented database. The sc
 ### Database Information
 - **Type**: MongoDB (NoSQL)
 - **Driver**: Motor (Async Python driver)
-- **Collections**: 10 total (7 core + 3 feature collections)
+- **Collections**: 7 main collections
 - **Indexes**: 13 optimized indexes
 - **ID Format**: UUID (string)
 
@@ -237,27 +237,7 @@ The Lil Gift Corner uses **MongoDB**, a NoSQL document-oriented database. The sc
 
 ---
 
-## Collection Categories
-
-### Core Collections (7)
-These collections are essential for the platform's basic e-commerce functionality:
-1. **products** - Product catalog
-2. **users** - User accounts
-3. **orders** - Order history
-4. **cart** - Shopping cart
-5. **payment_transactions** - Payment records
-6. **custom_gifts** - Custom gift requests
-7. **contacts** - Contact form submissions
-
-### Feature Collections (3)
-These collections support optional features (reviews, wishlist, coupons):
-8. **reviews** - Product reviews and ratings
-9. **wishlist** - User wishlists
-10. **coupons** - Discount coupons
-
----
-
-### 8. reviews (Feature Collection)
+### 8. reviews (Optional)
 
 **Purpose**: Store product reviews and ratings
 
@@ -275,7 +255,7 @@ These collections support optional features (reviews, wishlist, coupons):
 
 ---
 
-### 9. wishlist (Feature Collection)
+### 9. wishlist (Optional)
 
 **Purpose**: Store user wishlist items
 
@@ -291,7 +271,7 @@ These collections support optional features (reviews, wishlist, coupons):
 
 ---
 
-### 10. coupons (Feature Collection)
+### 10. coupons (Optional)
 
 **Purpose**: Store discount coupons
 

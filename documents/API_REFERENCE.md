@@ -10,7 +10,7 @@
 
 ## Overview
 
-The Lil Gift Corner provides a comprehensive RESTful API with 60 endpoints organized into the following categories:
+The Lil Gift Corner provides a comprehensive RESTful API with 40+ endpoints organized into the following categories:
 
 - Authentication
 - Products

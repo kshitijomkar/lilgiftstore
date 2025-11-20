@@ -91,9 +91,9 @@ JWT_EXPIRATION_DAYS=7
 # PAYMENT CONFIGURATION
 # ============================================
 # Stripe API Key
-# Test mode: PLACEHOLDER_TEST_KEY
-# Live mode: your_secret_key_
-STRIPE_API_KEY=PLACEHOLDER_TEST_KEY
+# Test mode: sk_test_...
+# Live mode: sk_live_...
+STRIPE_API_KEY=sk_test_your_stripe_key
 
 # ============================================
 # CORS CONFIGURATION
@@ -207,13 +207,13 @@ python -c "import secrets; print(secrets.token_hex(32))"
 
 | Variable | Type | Default | Required | Description |
 |----------|------|---------|----------|-------------|
-| `STRIPE_API_KEY` | string | `PLACEHOLDER_TEST_KEY` | Yes | Stripe secret API key |
+| `STRIPE_API_KEY` | string | `sk_test_emergent` | Yes | Stripe secret API key |
 
 **Getting Stripe Keys**:
 1. Sign up at https://stripe.com
 2. Go to Developers → API keys
-3. Use test keys for development: `PLACEHOLDER_TEST_KEY`
-4. Use live keys for production: `your_secret_key_`
+3. Use test keys for development: `sk_test_...`
+4. Use live keys for production: `sk_live_...`
 
 #### Server Variables
 
@@ -358,12 +358,12 @@ Sign up at https://stripe.com
 
 **Test Mode** (for development):
 ```env
-STRIPE_API_KEY=PLACEHOLDER_TEST_KEY
+STRIPE_API_KEY=sk_test_51XxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXx
 ```
 
 **Live Mode** (for production):
 ```env
-STRIPE_API_KEY=your_stripe_key
+STRIPE_API_KEY=sk_live_51XxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXx
 ```
 
 #### 3. Configure Webhooks (Production)
@@ -469,7 +469,7 @@ SENDGRID_API_KEY=SG.xxxxxxxxxxxx
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=lilgiftcorner_dev
 JWT_SECRET=dev-secret-key-not-for-production
-STRIPE_API_KEY=PLACEHOLDER_TEST_KEY
+STRIPE_API_KEY=sk_test_your_test_key
 CORS_ORIGINS=http://localhost:3000
 DEBUG=True
 LOG_LEVEL=DEBUG
@@ -487,7 +487,7 @@ REACT_APP_BACKEND_URL=http://localhost:8001
 MONGO_URL=mongodb+srv://user:pass@staging-cluster.mongodb.net/
 DB_NAME=lilgiftcorner_staging
 JWT_SECRET=staging-secret-32-chars-minimum-length
-STRIPE_API_KEY=PLACEHOLDER_TEST_KEY
+STRIPE_API_KEY=sk_test_your_test_key
 CORS_ORIGINS=https://staging.yourdomain.com
 DEBUG=False
 LOG_LEVEL=INFO
@@ -505,7 +505,7 @@ REACT_APP_BACKEND_URL=https://staging-api.yourdomain.com
 MONGO_URL=mongodb+srv://user:pass@prod-cluster.mongodb.net/
 DB_NAME=lilgiftcorner_prod
 JWT_SECRET=production-super-secret-min-32-chars
-STRIPE_API_KEY=your_stripe_key
+STRIPE_API_KEY=sk_live_your_live_key
 CORS_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
 DEBUG=False
 LOG_LEVEL=WARNING
@@ -610,8 +610,8 @@ mongosh "mongodb://localhost:27017"
 **Solution**:
 ```bash
 # Verify Stripe key format
-# Test mode: PLACEHOLDER_TEST_KEY
-# Live mode: your_secret_key_
+# Test mode: sk_test_...
+# Live mode: sk_live_...
 
 # Check Stripe dashboard for errors
 # Ensure webhook endpoint is configured (production)
