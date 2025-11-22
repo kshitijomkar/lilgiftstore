@@ -1,0 +1,13 @@
+# robots.txt for The Lil Gift Corner
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /checkout/process
+
+# Sitemap location
+Sitemap: https://lilgiftstore.vercel.app/sitemap.xml
+
+# Crawl rate
+Crawl-delay: 5
